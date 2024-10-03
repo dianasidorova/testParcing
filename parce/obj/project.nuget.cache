@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "BR19hmP2bNTF1XPmUVTluk8XfvplTZVMAInaIBgAEzfDhjbpOC45Vy38kP9xLxX1gid6BvtfuDwglPesJdGang==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Diana\\source\\repos\\parce\\parce\\parce.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Diana\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Diana\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

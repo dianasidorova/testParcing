@@ -1,0 +1,5 @@
+C:\Users\Diana\source\repos\parce\parce\obj\Debug\net6.0\parce.csproj.AssemblyReference.cache
+C:\Users\Diana\source\repos\parce\parce\obj\Debug\net6.0\parce.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Diana\source\repos\parce\parce\obj\Debug\net6.0\parce.AssemblyInfoInputs.cache
+C:\Users\Diana\source\repos\parce\parce\obj\Debug\net6.0\parce.AssemblyInfo.cs
+C:\Users\Diana\source\repos\parce\parce\obj\Debug\net6.0\parce.csproj.CoreCompileInputs.cache
