@@ -17,3 +17,4 @@ C:\Users\Diana\source\repos\parce\parce\obj\Debug\net6.0-windows\refint\parce.dl
 C:\Users\Diana\source\repos\parce\parce\obj\Debug\net6.0-windows\parce.pdb
 C:\Users\Diana\source\repos\parce\parce\obj\Debug\net6.0-windows\parce.genruntimeconfig.cache
 C:\Users\Diana\source\repos\parce\parce\obj\Debug\net6.0-windows\ref\parce.dll
+C:\Users\Diana\source\repos\parce\parce\obj\Debug\net6.0-windows\parce.sourcelink.json
