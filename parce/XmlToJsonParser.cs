@@ -92,13 +92,12 @@ namespace parce
                 throw new InvalidOperationException("Некоректний файл: Поле 'TestTime' є порожнім.");
             }
 
-            // Перевірка на наявність протоколів та часу тестування
             if (string.IsNullOrWhiteSpace(network.TestTime) && (network.Protocols == null || !network.Protocols.Any()))
             {
                 throw new InvalidOperationException("Некоректний файл: немає протоколів.");
             }
 
-            // Додатково перевіряємо кожен протокол на наявність серійного або прихованого номера
+
             foreach (var protocol in network.Protocols)
             {
                 if (string.IsNullOrWhiteSpace(protocol.SerKey) || string.IsNullOrWhiteSpace(protocol.HidKey))
