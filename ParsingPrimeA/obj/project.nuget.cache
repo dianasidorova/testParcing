@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "waicadN0YNQWv0qhp89BpJCLB0cgo3JQ10iD0ZE+IOP5I1Jp2WuaZUNYOAoD4u7Nrcifi7t+emFusQejWAOS5A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Diana\\source\\repos\\parce\\ParsingPrimeA\\ParsingPrimeA.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Diana\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Diana\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

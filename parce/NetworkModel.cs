@@ -9,6 +9,5 @@ namespace parce
     public class NetworkModel
     {
         public string TestTime { get; set; }
-        public List<ProtocolModel> Protocols { get; set; }
     }
 }

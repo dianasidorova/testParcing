@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.VisualBasic.Devices;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -41,25 +43,49 @@ namespace parce
                               Name = x.Element("name")?.Value,
                           }).ToList(),
 
-                Network = ParseNetwork(xdoc.Root.Element("network")),
-
-                Modules = xdoc.Root.Element("modules")
-                          ?.Elements("i")
-                          ?.Where(x => x.Element("using")?.Value == "on")
-                          ?.Where(x => x.Element("type")?.Value == "PUIZ")
-                          .Select(x => new ModuleModel
-                          {
-                              Id = int.Parse(x.Attribute("id")?.Value ?? "0"),
-                              Name = x.Element("name")?.Value,
-                              Type = x.Element("type")?.Value
-                          }).ToList(),
-
-
+               
+                Protocols = xdoc.Root.Element("network").Element("protocols")
+                             ?.Elements("i")
+                             .Select(p => new ProtocolModel
+                             {
+                                 Id = int.Parse(p.Attribute("id")?.Value ?? "0"),
+                                 Type = p.Element("type")?.Value,
+                                 SerKey = p.Element("ser_key")?.Value,
+                                 HidKey = p.Element("hid_key")?.Value
+                             }).ToList(),
+                PCN = ParseNetwork(xdoc.Root.Element("network")),
             };
+            var modules = xdoc.Root.Element("modules")
+                         ?.Elements("i")
+                         ?.Where(x => x.Element("using")?.Value == "on")
+                         ?.Where(x => x.Element("type")?.Value == "PUIZ")
+                         .Select(x => new ModuleModel
+                         {
+                             Id = int.Parse(x.Attribute("id")?.Value ?? "0"),
+                             Name = x.Element("name")?.Value,
+                             Type = x.Element("type")?.Value
+                         }).ToList();
+
+            if (modules != null && modules.Any())
+            {
+                document.Modules = modules;
+            }
 
             if (document.Zones == null || !document.Zones.Any())
             {
                 throw new InvalidOperationException("Некоректний файл: немає активних зон.");
+            }
+
+            foreach (var protocol in document.Protocols)
+            {
+                if (string.IsNullOrWhiteSpace(protocol.SerKey) || string.IsNullOrWhiteSpace(protocol.HidKey))
+                {
+                    throw new InvalidOperationException($"Некоректний файл: Протокол з ID {protocol.Id} має порожній серійний або прихований номер.");
+                }
+            }
+            if (document.Protocols == null || !document.Protocols.Any())
+            {
+                throw new InvalidOperationException("Некоректний файл: немає протоколів.");
             }
 
             string jsonOutput = JsonConvert.SerializeObject(document, Formatting.Indented);
@@ -73,35 +99,13 @@ namespace parce
             var network = new NetworkModel
             {
                 TestTime = networkElement.Element("PCN")?.Element("test_time")?.Value,
-                Protocols = networkElement.Element("protocols")
-                             ?.Elements("i")
-                             .Select(p => new ProtocolModel
-                             {
-                                 Id = int.Parse(p.Attribute("id")?.Value ?? "0"),
-                                 Type = p.Element("type")?.Value,
-                                 SerKey = p.Element("ser_key")?.Value,
-                                 HidKey = p.Element("hid_key")?.Value
-                             }).ToList()
+                
             };
 
             if (string.IsNullOrWhiteSpace(network.TestTime))
             {
                 throw new InvalidOperationException("Некоректний файл: Поле 'TestTime' є порожнім.");
-            }
-
-            if (string.IsNullOrWhiteSpace(network.TestTime) && (network.Protocols == null || !network.Protocols.Any()))
-            {
-                throw new InvalidOperationException("Некоректний файл: немає протоколів.");
-            }
-
-
-            foreach (var protocol in network.Protocols)
-            {
-                if (string.IsNullOrWhiteSpace(protocol.SerKey) || string.IsNullOrWhiteSpace(protocol.HidKey))
-                {
-                    throw new InvalidOperationException($"Некоректний файл: Протокол з ID {protocol.Id} має порожній серійний або прихований номер.");
-                }
-            }
+            }          
 
             return network;
         }

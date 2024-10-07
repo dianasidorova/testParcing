@@ -9,7 +9,6 @@ namespace parce
     public class ZoneModel
     {
         public int Id { get; set; }
-        public string Using { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
     }

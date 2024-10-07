@@ -8,7 +8,6 @@ namespace parce
 {
     public class ProtocolModel
     {
-
         public int Id { get; set; }
         public string Type { get; set; }
         public string SerKey { get; set; }
