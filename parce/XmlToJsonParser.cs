@@ -28,7 +28,6 @@ namespace parce
                           .Select(x => new ZoneModel
                           {
                               Id = int.Parse(x.Attribute("id")?.Value ?? "0"),
-                              Using = x.Element("using")?.Value,
                               Name = x.Element("name")?.Value,
                               Type = ConvertZoneType(x.Element("type")?.Value)
                           }).ToList(),
@@ -52,7 +51,6 @@ namespace parce
                           .Select(x => new ModuleModel
                           {
                               Id = int.Parse(x.Attribute("id")?.Value ?? "0"),
-                              Using = x.Element("using")?.Value,
                               Name = x.Element("name")?.Value,
                               Type = x.Element("type")?.Value
                           }).ToList(),
@@ -113,8 +111,8 @@ namespace parce
         {
             return type switch
             {
-                "manual" => "Ручне сповіщення",
-                "general" => "Автоматичне сповіщення",
+                "manual" => "Ручний сповіщувач",
+                "general" => "Автоматичний сповіщувач",
                 _ => "Універсальний вхід"
             };
         }
