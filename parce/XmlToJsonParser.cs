@@ -38,7 +38,6 @@ namespace parce
                           .Select(x => new UserModel
                           {
                               Id = int.Parse(x.Attribute("id")?.Value ?? "0"),
-                              Using = x.Element("using")?.Value,
                               Name = x.Element("name")?.Value,
                           }).ToList(),
 
