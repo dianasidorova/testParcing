@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParsingPrimeA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08ded70778f211a5abdfcf00792406f1a46fe52e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c204bbe268aeb9af6dfafe8c9557fc6464655706")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParsingPrimeA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParsingPrimeA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

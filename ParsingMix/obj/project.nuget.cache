@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "IA7Ot+xSfVs7jCPTzRh5isTx1T289zh5NzQBuhYQR5TyGq6zd9nu4BDV4MXZm9IOfSXKMCa1caldiYkZPGK3QA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Diana\\source\\repos\\parce\\ParsingMix\\ParsingMix.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Diana\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Diana\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

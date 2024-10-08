@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -49,16 +50,22 @@ namespace ParsingPrimeA
                    .Select(x => x.Element("test_period")?.Value)
                    .FirstOrDefault(),
 
-                Zones = xdoc.Root.Element("FxZonesModule")
+                Zones = xdoc.Root.Element("modules")
+                          .Element("FxZonesModule")
                           ?.Elements("i")
                           .Select(x => new ZoneModel
                           {
-                              Id = int.Parse(x.Attribute("id")?.Value ?? "0"),
+                              Id = int.Parse(x.Attribute("id")?.Value ?? "0") + 1,
                               Name = x.Element("name")?.Value
                           }).ToList(),
 
 
             };
+
+            if (config.Zones == null || !config.Zones.Any())
+            {
+                throw new InvalidOperationException("Некоректний файл: немає активних зон.");
+            }
 
             string jsonOutput = JsonConvert.SerializeObject(config, Formatting.Indented);
             return jsonOutput;
