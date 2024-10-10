@@ -56,8 +56,6 @@ namespace ParsingMix
             var doc = new BaseModel
             {
                 Model = document.Root.Attribute("ppkp")?.Value,
-                Version = document.Root.Attribute("ver")?.Value,
-                Revision = document.Root.Attribute("rev")?.Value,
 
                 Zones = document.Root.Element("zones")
                           ?.Elements("i")
@@ -122,7 +120,6 @@ namespace ParsingMix
             var config = new BaseModel
             {
                 Model = document.Root.Attribute("model")?.Value,
-                Version = document.Root.Attribute("ver")?.Value,
 
                 Zones = ParseZone(document.Root.Element("modules")
                            .Element("FxZonesModule")),

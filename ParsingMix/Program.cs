@@ -56,7 +56,7 @@ class Program
                     }
 
 
-                    Console.WriteLine($"Результат збережено у файл: {jsonFilePath}");
+                    Console.WriteLine($"Результат збережено: \n {jsonFilePath}");
                 }
             }
             else
@@ -70,11 +70,12 @@ class Program
         }
     }
 
+
     private static string ConvertZoneTypeToString(ZoneType zoneType)
     {
         return zoneType switch
         {
-            ZoneType.FireAddressZone => "Пожежна адресна зона",
+            ZoneType.FireAddressZone => "Адресна",
             ZoneType.UniversalInput => "Універсальний вхід",
             ZoneType.ManualNotifier => "Ручний сповіщувач",
             ZoneType.AutomaticNotifier => "Автоматичний сповіщувач",

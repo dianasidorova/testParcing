@@ -10,10 +10,6 @@ namespace ParsingMix
     public class BaseModel
     {
         public string Model { get; set; }
-        public string Version { get; set; }
-
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string Revision { get; set; }
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public List<ZoneModel> Zones { get; set; }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ParsingMix")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c204bbe268aeb9af6dfafe8c9557fc6464655706")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e54eba8983a5a8c50d95ce1013dac0b1d3396b5b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ParsingMix")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ParsingMix")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
